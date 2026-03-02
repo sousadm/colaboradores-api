@@ -1,0 +1,17 @@
+version: '3.8'
+
+volumes:
+  db_data:
+
+services:
+  db:
+    image: postgres:17
+    container_name: colaboradores_db
+    environment:
+      POSTGRES_DB: colaboradores
+      POSTGRES_USER: colaboradores
+      POSTGRES_PASSWORD: colaboradores
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
